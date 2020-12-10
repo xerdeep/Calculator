@@ -9,12 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hi")
-            .font(.system(size: 20))
-            .foregroundColor(.white)
-            .frame(width: 30, height: 50, alignment: .center)
-            .background(Color("operatorBackground"))
-            .cornerRadius(10)
+        Button(action: {
+            print("Button!")
+        }, label: {
+            Text("Hi")
+                .font(.system(size: 20))
+                .foregroundColor(.white)
+                .frame(width: 30, height: 50, alignment: .center)
+                .background(Color("operatorBackground"))
+                .cornerRadius(10)
+        })
     }
 }
 
