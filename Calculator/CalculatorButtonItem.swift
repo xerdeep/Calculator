@@ -13,7 +13,6 @@ enum CalculatorButtonItem {
         case minus = "-"
         case multiply = "×"
         case divide = "÷"
-        case equal = "="
     }
     
     enum Command: String {
@@ -26,6 +25,7 @@ enum CalculatorButtonItem {
     case command(Command)
     case digit(Int)
     case dot
+    case equal
 }
 
 extension CalculatorButtonItem {
@@ -39,11 +39,13 @@ extension CalculatorButtonItem {
             return op.rawValue
         case .command(let cmd):
             return cmd.rawValue
+        case .equal:
+            return "="
         }
     }
     
     var size: CGSize {
-        CGSize(width: 80, height: 100)
+        CGSize(width: 50, height: 50)
     }
     
     var bgColorName: String {
@@ -54,6 +56,10 @@ extension CalculatorButtonItem {
             return "operationBg"
         case .command:
             return "commandBg"
+        case .equal:
+            return "commandBg"
         }
     }
 }
+
+extension CalculatorButtonItem: Hashable {}

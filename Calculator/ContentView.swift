@@ -8,18 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    let row: [CalculatorButtonItem] = [
-        .digit(1), .digit(2), .digit(3), .operation(.plus)
-    ]
     var body: some View {
-        HStack {
-            ForEach(row.indices) { index in
-                CalculatorButton(text: row[index].text, bgColorName: row[index].bgColorName, call: {
-                    print("Button:\(row[index].text)");
-                })
-                
-            }
-        }
+        CalculatorButtonPad()
+//        CalculatorButtonRow(row: [.digit(1), .digit(2)])
     }
 }
 
@@ -30,7 +21,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct CalculatorButton : View {
-    let size: CGSize = CGSize(width: 50, height: 80)
+    let size: CGSize = CGSize(width: 50, height: 50)
     let text: String
     let textSize: Float = 20
     let bgColorName: String
@@ -43,9 +34,41 @@ struct CalculatorButton : View {
             Text(text)
                 .font(.system(size: 20))
                 .foregroundColor(.white)
-                .frame(width: 30, height: 50, alignment: .center)
-                .background(Color("operatorBackground"))
+                .frame(width: size.width, height: size.height, alignment: .center)
+                .background(Color(bgColorName))
                 .cornerRadius(10)
         })
     }
+}
+
+struct CalculatorButtonRow: View {
+    let row: [CalculatorButtonItem]
+    
+    var body: some View {
+        HStack {
+            ForEach(row.indices) { index in
+                CalculatorButton(text: row[index].text, bgColorName: row[index].bgColorName, call: {
+                    print("Button:\(row[index].text)");
+                })
+            }
+        }
+    }
+}
+
+struct CalculatorButtonPad: View {
+    let pad : [[CalculatorButtonItem]] = [
+        [.digit(7), .digit(8), .digit(9), .operation(.multiply)],
+        [.digit(4), .digit(5), .digit(6), .operation(.minus)],
+        [.digit(1), .digit(2), .digit(3), .operation(.plus)],
+        [.digit(0), .digit(0), .dot , .equal],
+    ]
+    
+    var body: some View {
+        VStack(spacing: 8, content: {
+            ForEach(pad, id: \.self) { row in
+                CalculatorButtonRow(row: row)
+            }
+        })
+    }
+    
 }
