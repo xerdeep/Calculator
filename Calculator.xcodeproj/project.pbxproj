@@ -11,6 +11,7 @@
 		E5265DB225810C890099B14C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5265DB125810C890099B14C /* ContentView.swift */; };
 		E5265DB425810C8A0099B14C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5265DB325810C8A0099B14C /* Assets.xcassets */; };
 		E5265DB725810C8A0099B14C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5265DB625810C8A0099B14C /* Preview Assets.xcassets */; };
+		E56620762585F2D3007193C8 /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56620752585F2D3007193C8 /* CalculatorButtonItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		E5265DB325810C8A0099B14C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5265DB625810C8A0099B14C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E5265DB825810C8A0099B14C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E56620752585F2D3007193C8 /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				E5265DAF25810C890099B14C /* CalculatorApp.swift */,
 				E5265DB125810C890099B14C /* ContentView.swift */,
+				E56620752585F2D3007193C8 /* CalculatorButtonItem.swift */,
 				E5265DB325810C8A0099B14C /* Assets.xcassets */,
 				E5265DB825810C8A0099B14C /* Info.plist */,
 				E5265DB525810C8A0099B14C /* Preview Content */,
@@ -140,6 +143,7 @@
 			files = (
 				E5265DB225810C890099B14C /* ContentView.swift in Sources */,
 				E5265DB025810C890099B14C /* CalculatorApp.swift in Sources */,
+				E56620762585F2D3007193C8 /* CalculatorButtonItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
